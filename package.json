@@ -17,7 +17,7 @@
     "prettier": "^2.2.1",
     "snowpack": "^3.8.0",
     "tailwindcss": "^3.2.7",
-    "typescript": "4.3.4"
+    "typescript": "4.9.5"
   },
   "name": "solitaire",
   "description": "",
