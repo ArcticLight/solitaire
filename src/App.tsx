@@ -142,8 +142,11 @@ export const PuzzleSolver: React.FC<{initialState: Playfield}> = ({initialState}
 
 export const RandomSolver: React.FC = () => {
   const [initialState, setInitialState] = useState(new Playfield(newRandDeck()));
-  const [stack] = useSolver({initialState});
-  const reset = useCallback(() => setInitialState(new Playfield(newRandDeck())), [])
+  const [stack, stackReset] = useSolver({initialState});
+  const reset = useCallback(() => {
+    stackReset();
+    setInitialState(new Playfield(newRandDeck()));
+  }, []);
 
   useEffect(() => {
     if (stack === 'lose' || !!stack && 'win' in stack) {
